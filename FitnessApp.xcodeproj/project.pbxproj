@@ -16,6 +16,7 @@
 		61C5F7E22B01BBB2002FDC73 /* HistoricDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C5F7E12B01BBB2002FDC73 /* HistoricDataView.swift */; };
 		61C5F7E42B01C46D002FDC73 /* ProgressCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C5F7E32B01C46D002FDC73 /* ProgressCircleView.swift */; };
 		61C5F7E72B0DAEB7002FDC73 /* ActivityCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C5F7E62B0DAEB7002FDC73 /* ActivityCardView.swift */; };
+		61C5F7E92B131BF6002FDC73 /* WorkoutCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C5F7E82B131BF6002FDC73 /* WorkoutCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		61C5F7E12B01BBB2002FDC73 /* HistoricDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricDataView.swift; sourceTree = "<group>"; };
 		61C5F7E32B01C46D002FDC73 /* ProgressCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCircleView.swift; sourceTree = "<group>"; };
 		61C5F7E62B0DAEB7002FDC73 /* ActivityCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCardView.swift; sourceTree = "<group>"; };
+		61C5F7E82B131BF6002FDC73 /* WorkoutCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				61C5F7DF2B01BB26002FDC73 /* HomeView.swift */,
 				61C5F7E32B01C46D002FDC73 /* ProgressCircleView.swift */,
 				61C5F7E62B0DAEB7002FDC73 /* ActivityCardView.swift */,
+				61C5F7E82B131BF6002FDC73 /* WorkoutCard.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				61C5F7DE2B01BA70002FDC73 /* FitnessTabView.swift in Sources */,
+				61C5F7E92B131BF6002FDC73 /* WorkoutCard.swift in Sources */,
 				61C5F7E42B01C46D002FDC73 /* ProgressCircleView.swift in Sources */,
 				61C5F7E02B01BB26002FDC73 /* HomeView.swift in Sources */,
 				61C5F7E72B0DAEB7002FDC73 /* ActivityCardView.swift in Sources */,
