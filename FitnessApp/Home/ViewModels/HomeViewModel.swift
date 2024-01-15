@@ -16,6 +16,12 @@ class HomeViewModel : ObservableObject {
     @Published var stand : Int = 0
     
     @Published var activities = [Activity]()
+    @Published var workouts = [
+        Workout(id: 0, title: "Running", image: "figure.run",  duration: "23 Mins", colorTint: .cyan, date: "Nov 26", calories: "231 kCal"),
+        Workout(id: 1, title: "Running", image: "figure.run",  duration: "25 Mins", colorTint: .mint, date: "Nov 27", calories: "341 kCal"),
+        Workout(id: 2, title: "Running", image: "figure.run",  duration: "33 Mins", colorTint: .orange, date: "Nov 28", calories: "407 kCal"),
+        Workout(id: 3, title: "Running", image: "figure.run",  duration: "40 Mins", colorTint: .indigo, date: "Nov 29", calories: "502 kCal")
+    ]
     
     var mockActivities = [
         Activity(title: "Today's Steps", subtitle: "Goal 12,000", image: "figure.walk", tintColor: .green, amount: "9821"),
@@ -36,10 +42,11 @@ class HomeViewModel : ObservableObject {
             do {
                 try await healthManager.requestHealthKitAccess()
                 fetchTodayCalories()
-                //fetchTodayExerciseTime()
-                //fetchTodayStandHours()
+                fetchTodayExerciseTime()
+                fetchTodayStandHours()
                 fetchTodaysSteps()
                 fetchCurrentWeekActivities()
+                fetchRecentWorkouts()
                             } catch {
                 print(error.localizedDescription)
             }
@@ -108,6 +115,20 @@ class HomeViewModel : ObservableObject {
             case .success(let activities):
                 DispatchQueue.main.async {
                     self.activities.append(contentsOf: activities)
+                }
+            case .failure(let failure):
+                print(failure.localizedDescription)
+            }
+        }
+    }
+    
+    //MARK: Recent Workouts
+    func fetchRecentWorkouts() {
+        healthManager.fetchWorkoutsForMonth(month: Date()){ result in
+            switch result {
+            case .success(let workouts):
+                DispatchQueue.main.async {
+                    self.workouts = Array(workouts.prefix(4))
                 }
             case .failure(let failure):
                 print(failure.localizedDescription)

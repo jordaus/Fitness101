@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		615C60822B54E322002E6E47 /* HKWorkoutActivityType+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615C60812B54E322002E6E47 /* HKWorkoutActivityType+Ext.swift */; };
 		61C105BD2B3FBC5100EE7EC0 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C105BC2B3FBC5100EE7EC0 /* HomeViewModel.swift */; };
 		61C105C22B3FBD5700EE7EC0 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C105C12B3FBD5700EE7EC0 /* Activity.swift */; };
 		61C105C62B3FBDD600EE7EC0 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C105C52B3FBDD600EE7EC0 /* Workout.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		615C60812B54E322002E6E47 /* HKWorkoutActivityType+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HKWorkoutActivityType+Ext.swift"; sourceTree = "<group>"; };
 		61C105BC2B3FBC5100EE7EC0 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		61C105C12B3FBD5700EE7EC0 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		61C105C52B3FBDD600EE7EC0 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
@@ -53,6 +55,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		615C60802B54E154002E6E47 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				615C60812B54E322002E6E47 /* HKWorkoutActivityType+Ext.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		61C105BE2B3FBC9700EE7EC0 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +118,7 @@
 		61C5F7CE2AF09474002FDC73 /* FitnessApp */ = {
 			isa = PBXGroup;
 			children = (
+				615C60802B54E154002E6E47 /* Util */,
 				61C105CA2B4667FC00EE7EC0 /* Managers */,
 				61C5F7E52B0DAE80002FDC73 /* Home */,
 				61C105C72B46678800EE7EC0 /* FitnessApp.entitlements */,
@@ -215,6 +226,7 @@
 				61C5F7E92B131BF6002FDC73 /* WorkoutCard.swift in Sources */,
 				61C5F7E42B01C46D002FDC73 /* ProgressCircleView.swift in Sources */,
 				61C5F7E02B01BB26002FDC73 /* HomeView.swift in Sources */,
+				615C60822B54E322002E6E47 /* HKWorkoutActivityType+Ext.swift in Sources */,
 				61C105C62B3FBDD600EE7EC0 /* Workout.swift in Sources */,
 				61C105C92B4667AD00EE7EC0 /* HealthManager.swift in Sources */,
 				61C5F7E72B0DAEB7002FDC73 /* ActivityCardView.swift in Sources */,
