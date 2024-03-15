@@ -11,6 +11,7 @@ import RevenueCat
 struct PaywallView: View {
     @Environment (\.dismiss) var dismiss
     @StateObject var viewModel = PaywallViewModel()
+    @Binding var isPremium : Bool
     var body: some View {
         VStack(spacing: 16) {
             Text("Premium")
@@ -45,10 +46,12 @@ struct PaywallView: View {
                 if let offering = viewModel.currentOffering {
                     ForEach(offering.availablePackages) { package in
                         Button {
-                            Purchases.shared.purchase(package: package) { (transaction, customerInfo, error, userCancelled) in
-                                if customerInfo?.entitlements["premium"]?.isActive == true {
-                                    // Unlock that great "pro" content
+                            Task {
+                                do {
+                                    try await viewModel.purchase(package: package)
                                     dismiss()
+                                } catch {
+                                    print(error.localizedDescription)
                                 }
                             }
                         } label: {
@@ -70,11 +73,13 @@ struct PaywallView: View {
             }
             .padding(.horizontal, 40)
             Button {
-                Purchases.shared.restorePurchases { customerInfo, error in
-                    // ... check customerInfo to see if entitlement is now active
-                    if customerInfo?.entitlements["premium"]?.isActive == true {
-                        // Unlock that great "pro" content
+                Task {
+                    do {
+                        try await viewModel.restorePurchases()
+                        isPremium = true
                         dismiss()
+                    } catch {
+                        print(error.localizedDescription)
                     }
                 }
             } label: {
@@ -91,9 +96,10 @@ struct PaywallView: View {
             
         }
         .frame(maxHeight: .infinity, alignment: .top)
+        .padding(.top)
     }
 }
 
 #Preview {
-    PaywallView()
+    PaywallView(isPremium: .constant(false))
 }

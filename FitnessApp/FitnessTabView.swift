@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
+import RevenueCat
 
 struct FitnessTabView: View {
     @State var selectedTab = "Home"
-    
+    @State var isPremium = false
     //this is just initializing the colors and customs of the toolbar at the bottom
     init() {
         let appearance = UITabBarAppearance()
@@ -21,7 +22,7 @@ struct FitnessTabView: View {
     
     var body: some View {
         TabView(selection: $selectedTab) {
-            HomeView()
+            HomeView(isPremium: $isPremium)
                 .tag("Home")
                 .tabItem {
                     Image(systemName: "house")
@@ -33,6 +34,11 @@ struct FitnessTabView: View {
                     Image(systemName: "chart.line.uptrend.xyaxis")
                     Text("Charts")
                 }
+        }
+        .onAppear {
+            Purchases.shared.getCustomerInfo { customerInfo, error in
+                isPremium = customerInfo?.entitlements["premium"]?.isActive == true
+            }
         }
     }
 }
