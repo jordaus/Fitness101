@@ -6,9 +6,14 @@
 //
 
 import SwiftUI
+import RevenueCat
 
 @main
 struct FitnessAppApp: App {
+    init(){
+        Purchases.logLevel = .debug
+        Purchases.configure(withAPIKey: "appl_MFpvRrGVRfHlbOWleUkhHPRGBEZ")
+    }
     var body: some Scene {
         WindowGroup {
             FitnessTabView()
