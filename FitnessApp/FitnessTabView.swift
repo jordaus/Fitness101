@@ -9,8 +9,10 @@ import SwiftUI
 import RevenueCat
 
 struct FitnessTabView: View {
+    @AppStorage("username") var username : String?
     @State var selectedTab = "Home"
     @State var isPremium = false
+    @State var showTerms = true
     //this is just initializing the colors and customs of the toolbar at the bottom
     init() {
         let appearance = UITabBarAppearance()
@@ -34,8 +36,15 @@ struct FitnessTabView: View {
                     Image(systemName: "chart.line.uptrend.xyaxis")
                     Text("Charts")
                 }
+            LeaderboardView(showTerms: $showTerms)
+                .tag("Leaderboard")
+                .tabItem {
+                    Image(systemName: "star.circle")
+                    Text("Leaderboard")
+                }
         }
         .onAppear {
+            showTerms = username == nil
             Purchases.shared.getCustomerInfo { customerInfo, error in
                 isPremium = customerInfo?.entitlements["premium"]?.isActive == true
             }

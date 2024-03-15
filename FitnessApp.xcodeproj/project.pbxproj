@@ -14,6 +14,8 @@
 		614C94602B798B1700C3EBFA /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614C945F2B798B1700C3EBFA /* PaywallView.swift */; };
 		614C94622BA4121400C3EBFA /* PaywallViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614C94612BA4121400C3EBFA /* PaywallViewModel.swift */; };
 		614C94642BA4126C00C3EBFA /* RevenueCat+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614C94632BA4126C00C3EBFA /* RevenueCat+Ext.swift */; };
+		614C946A2BA4E26A00C3EBFA /* LeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614C94692BA4E26A00C3EBFA /* LeaderboardView.swift */; };
+		614C946C2BA4ED5300C3EBFA /* TermsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614C946B2BA4ED5300C3EBFA /* TermsView.swift */; };
 		615C60822B54E322002E6E47 /* HKWorkoutActivityType+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615C60812B54E322002E6E47 /* HKWorkoutActivityType+Ext.swift */; };
 		615C60882B6371A1002E6E47 /* ChartDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615C60872B6371A1002E6E47 /* ChartDataView.swift */; };
 		615C608A2B637677002E6E47 /* ChartsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615C60892B637677002E6E47 /* ChartsViewModel.swift */; };
@@ -41,6 +43,8 @@
 		614C945F2B798B1700C3EBFA /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
 		614C94612BA4121400C3EBFA /* PaywallViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallViewModel.swift; sourceTree = "<group>"; };
 		614C94632BA4126C00C3EBFA /* RevenueCat+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RevenueCat+Ext.swift"; sourceTree = "<group>"; };
+		614C94692BA4E26A00C3EBFA /* LeaderboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardView.swift; sourceTree = "<group>"; };
+		614C946B2BA4ED5300C3EBFA /* TermsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsView.swift; sourceTree = "<group>"; };
 		615C60812B54E322002E6E47 /* HKWorkoutActivityType+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HKWorkoutActivityType+Ext.swift"; sourceTree = "<group>"; };
 		615C60872B6371A1002E6E47 /* ChartDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartDataView.swift; sourceTree = "<group>"; };
 		615C60892B637677002E6E47 /* ChartsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsViewModel.swift; sourceTree = "<group>"; };
@@ -86,6 +90,39 @@
 				614C94542B79705900C3EBFA /* StoreKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		614C94652BA4E22F00C3EBFA /* Leaderboards */ = {
+			isa = PBXGroup;
+			children = (
+				614C94682BA4E24C00C3EBFA /* ViewModel */,
+				614C94672BA4E24700C3EBFA /* Model */,
+				614C94662BA4E24000C3EBFA /* Views */,
+			);
+			path = Leaderboards;
+			sourceTree = "<group>";
+		};
+		614C94662BA4E24000C3EBFA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				614C94692BA4E26A00C3EBFA /* LeaderboardView.swift */,
+				614C946B2BA4ED5300C3EBFA /* TermsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		614C94672BA4E24700C3EBFA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		614C94682BA4E24C00C3EBFA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		615C60802B54E154002E6E47 /* Util */ = {
@@ -190,6 +227,7 @@
 		61C5F7CE2AF09474002FDC73 /* FitnessApp */ = {
 			isa = PBXGroup;
 			children = (
+				614C94652BA4E22F00C3EBFA /* Leaderboards */,
 				615C60832B5CF401002E6E47 /* Charts */,
 				615C60802B54E154002E6E47 /* Util */,
 				61C105CA2B4667FC00EE7EC0 /* Managers */,
@@ -307,6 +345,7 @@
 				61C5F7DE2B01BA70002FDC73 /* FitnessTabView.swift in Sources */,
 				61C105BD2B3FBC5100EE7EC0 /* HomeViewModel.swift in Sources */,
 				61C5F7E92B131BF6002FDC73 /* WorkoutCard.swift in Sources */,
+				614C946C2BA4ED5300C3EBFA /* TermsView.swift in Sources */,
 				61C5F7E42B01C46D002FDC73 /* ProgressCircleView.swift in Sources */,
 				615C60882B6371A1002E6E47 /* ChartDataView.swift in Sources */,
 				61C5F7E02B01BB26002FDC73 /* HomeView.swift in Sources */,
@@ -320,6 +359,7 @@
 				615C60902B637714002E6E47 /* ChartOptions.swift in Sources */,
 				614C94622BA4121400C3EBFA /* PaywallViewModel.swift in Sources */,
 				61C5F7E22B01BBB2002FDC73 /* ChartsView.swift in Sources */,
+				614C946A2BA4E26A00C3EBFA /* LeaderboardView.swift in Sources */,
 				61C5F7D22AF09474002FDC73 /* ContentView.swift in Sources */,
 				615C608A2B637677002E6E47 /* ChartsViewModel.swift in Sources */,
 				61C5F7D02AF09474002FDC73 /* FitnessAppApp.swift in Sources */,
