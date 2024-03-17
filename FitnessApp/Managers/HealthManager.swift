@@ -34,6 +34,28 @@ extension Date {
         formatter.dateFormat = "MMM d"
         return formatter.string(from: self)
     }
+    
+    func fetchPreviousMonday() -> Date {
+        //get the current date
+        let currentDate = Calendar.current.date(byAdding: .day, value: -3, to: Date())!
+        //create a calendar instance
+        let calendar = Calendar.current
+        //Get weekday of current date
+        let weekday = calendar .component(.weekday, from: currentDate)
+        //Calculate the number of days to subtract to get the previojs monday
+        let daysToSubtract = (weekday + 5) % 7
+        //Create date components for the subtraction
+        var dateComponents = DateComponents()
+        //Calculate the date of the previous monday
+        return calendar.date(byAdding: dateComponents, to: self) ?? Date()
+    }
+    
+    func mondayDateFormat() -> String {
+        let monday = self.fetchPreviousMonday()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM-dd-yyyy"
+        return formatter.string(from: monday)
+    }
 }
 
 extension Double {
